@@ -8,14 +8,28 @@ const GetUserSsr = (props) => {
   console.log(user);
 
   return (
-    <div>
-      {user.length > 0 ? (
-        user.map((item) => {
-          return <h2 key={item.id}>{item.name}</h2>;
-        })
-      ) : (
-        <h2>UserList is empty !</h2>
-      )}
+    <div className="box">
+      <div>
+        <h2>in Props data</h2>
+        {props.user.length > 0 ? (
+          props.user.map((item) => {
+            return <h3 key={item.id}>{item.name}</h3>;
+          })
+        ) : (
+          <h3>UserList is empty !</h3>
+        )}
+      </div>
+
+      <div>
+        <h2>in redux data</h2>
+        {user.length > 0 ? (
+          user.map((item) => {
+            return <h3 key={item.id}>{item.name}</h3>;
+          })
+        ) : (
+          <h3>UserList is empty !</h3>
+        )}
+      </div>
     </div>
   );
 };

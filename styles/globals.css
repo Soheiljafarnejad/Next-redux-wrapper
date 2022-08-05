@@ -38,3 +38,15 @@ button {
 button:disabled {
   cursor: not-allowed;
 }
+
+.box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.box h2 {
+  margin-bottom: 1rem;
+  color: #0070f3;
+}
