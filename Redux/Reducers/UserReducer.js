@@ -1,7 +1,8 @@
 import * as t from "../Types";
 
 const initialState = {
-  userInfo: ["user 1", "user 2"],
+  userClient: ["user 1", "user 2"],
+  userSsr: [],
 };
 
 const UserReducer = (state = initialState, action) => {
@@ -9,7 +10,13 @@ const UserReducer = (state = initialState, action) => {
     case t.ADD_USER_INFO: {
       return {
         ...state,
-        userInfo: [...state.userInfo, action.payload],
+        userClient: [...state.userClient, action.payload],
+      };
+    }
+    case t.GET_USER_INFO: {
+      return {
+        ...state,
+        userSsr: action.payload,
       };
     }
     default:

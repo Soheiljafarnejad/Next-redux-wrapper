@@ -4,7 +4,7 @@ import { addUserInfo } from "../Redux/Actions/UserActions";
 
 const AddUserClient = () => {
   const [value, setValue] = useState("");
-  const user = useSelector((store) => store.user.userInfo);
+  const user = useSelector((store) => store.user.userClient);
   const dispatch = useDispatch();
 
   return (
@@ -20,10 +20,13 @@ const AddUserClient = () => {
         </button>
       </div>
 
-      {user.length > 0 &&
+      {user.length > 0 ? (
         user.map((item, index) => {
           return <h2 key={index}>{item}</h2>;
-        })}
+        })
+      ) : (
+        <h2>userList is empty !</h2>
+      )}
     </div>
   );
 };
