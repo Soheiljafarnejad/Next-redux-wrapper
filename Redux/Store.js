@@ -16,6 +16,11 @@ const masterReducer = (state, action) => {
     const nextState = {
       ...state,
       ...action.payload,
+      counter: { count: state.counter.count + action.payload.counter.count },
+      user: {
+        userClient: state.user.userClient,
+        userSsr: action.payload.user.userSsr,
+      },
     };
     return nextState;
   } else {
