@@ -1,10 +1,9 @@
 import axios from "axios";
 import { wrapper } from "../Redux/Store";
 import { useSelector } from "react-redux";
-import { getUserInfo } from "../Redux/Actions/UserActions";
+import { getUserInfo } from "../Redux/Reducers/UserReducer";
 import Counter from "../components/Counter";
 import Link from "next/link";
-import { incrementCount } from "../Redux/Actions/CounterActions";
 const GetUserSsr = (props) => {
   const user = useSelector((store) => store.user.userSsr);
 

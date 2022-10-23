@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Counter from "../components/Counter";
-import { addUserInfo } from "../Redux/Actions/UserActions";
+import { addUserInfo } from "../Redux/Reducers/UserReducer";
 
 const AddUserClient = () => {
   const [value, setValue] = useState("");
@@ -13,11 +13,7 @@ const AddUserClient = () => {
     <div className="box">
       <div>
         <div>
-          <input
-            style={{ marginRight: "0.5rem" }}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
+          <input style={{ marginRight: "0.5rem" }} value={value} onChange={(e) => setValue(e.target.value)} />
           <button disabled={!value} onClick={() => dispatch(addUserInfo(value))}>
             Add user
           </button>

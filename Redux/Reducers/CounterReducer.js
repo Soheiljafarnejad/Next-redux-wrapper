@@ -1,20 +1,18 @@
-import * as t from "../Types";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   count: 0,
 };
 
-const CounterReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case t.ADD_COUNT: {
-      return {
-        ...state,
-        count: state.count + 1,
-      };
-    }
-    default:
-      return state;
-  }
-};
+const Slice = createSlice({
+  name: "count",
+  initialState,
+  reducers: {
+    incrementCount: (state, action) => {
+      state.count = state.count + 1;
+    },
+  },
+});
 
-export default CounterReducer;
+export const { incrementCount } = Slice.actions;
+export const CounterReducer = Slice.reducer;
